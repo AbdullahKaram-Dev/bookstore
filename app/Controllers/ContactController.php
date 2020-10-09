@@ -14,7 +14,7 @@ class ContactController
                 ->select("email,website,phone,address")
                 ->getOne();
 
-        View::load('web/contact',$data);
+        View::load('web/contact/index',$data);
     }
 
 }

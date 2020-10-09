@@ -16,15 +16,15 @@ class BookController
                 ->get();
 
         $data['categories'] = Cat::connectTable()
-                ->select("id,name")
-                ->where("is_top","=",1)
+                ->select()
                 ->get();
+
         $data['authors'] = Author::connectTable()
                 ->select("id,name")
                 ->where("is_top","=",1)
                 ->get();
 
-        View::load("web/books",$data);
+        View::load("web/books/index",$data);
     }
 
 }

@@ -23,7 +23,7 @@ class HomeController
             ->get();
 
 
-        View::load("web/index",$data);
+        View::load("web/home/index",$data);
     }
 
 }
