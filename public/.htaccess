@@ -5,3 +5,6 @@ RewriteCond %{REQUEST_FILENAME} !-f
 
 RewriteRule ^(.*)$ index.php?$1 [L,QSA]
 
+<FilesMatch ".(ttf|otf|woff)$">
+    Header set Access-Control-Allow-Origin "*"
+</FilesMatch>
