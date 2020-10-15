@@ -1,7 +1,6 @@
 <?php
 require_once VIEWS . 'web/inc/header.php';
 ?>
-
 <section class="hero-wrap" style="background-image: url('<?php assets("images/bg_1.jpg"); ?>');" data-stellar-background-ratio="0.5">
     <div class="overlay"></div>
     <div class="container">

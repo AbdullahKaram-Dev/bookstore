@@ -4,7 +4,7 @@ namespace Core;
 
 class App
 {
-    private $controller, $action, $params;
+    private $controller, $action, $params, $middleware;
 
     public function __construct()
     {
@@ -29,6 +29,7 @@ class App
                 if ($requested_method == $info['method']) {
                     $this->controller = $info['controller'];
                     $this->action = $info['action'];
+                    $this->middleware = $info['middleware'];
                     $this->params = array_slice($matches, 1);
                     return true;
                 } else {
@@ -42,6 +43,15 @@ class App
 
     public function render()
     {
+        if ($this->middleware) {
+
+            $middleware_name = "App\Middleware\\$this->middleware";
+            if (class_exists($middleware_name)){
+
+                $middleware_name::handle(new Request());
+            }
+        }
+
         // add the namespace to the class name
         $controller_name = "App\Controllers\\" . $this->controller;
 
@@ -58,5 +68,6 @@ class App
         } else {
             die("$this->controller not found");
         }
+
     }
 }

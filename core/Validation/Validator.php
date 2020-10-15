@@ -20,6 +20,7 @@ class Validator
 
                 if (!empty($error)) {
                     $errors[] = $error;
+                    break;
                 }
             }
         }

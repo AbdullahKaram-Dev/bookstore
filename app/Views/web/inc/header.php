@@ -57,10 +57,16 @@
         </button>
         <div class="collapse navbar-collapse" id="ftco-nav">
             <ul class="navbar-nav m-auto">
-                <li class="nav-item active"><a href="index.html" class="nav-link">Home</a></li>
-                <li class="nav-item"><a href="books.html" class="nav-link">Books</a></li>
+                <li class="nav-item active"><a href="<?php url(''); ?>" class="nav-link">Home</a></li>
+                <li class="nav-item"><a href="<?php url('books'); ?>" class="nav-link">Books</a></li>
                 <li class="nav-item"><a href="authors.html" class="nav-link">Author</a></li>
-                <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+                <li class="nav-item"><a href="<?php url('contact-us'); ?>" class="nav-link">Contact</a></li>
+                <?php if(auth()):?>
+                <li class="nav-item"><a href="<?php url('logout'); ?>" class="nav-link">Logout</a></li>
+                <?php else: ?>
+                <li class="nav-item"><a href="<?php url('register'); ?>" class="nav-link">Register</a></li>
+                <li class="nav-item"><a href="<?php url('login'); ?>" class="nav-link">Login</a></li>
+                <?php endif; ?>
             </ul>
         </div>
     </div>

@@ -7,6 +7,3 @@ require_once ROUTES . 'web.php';
 
 
 $app = new App();
-
-
-

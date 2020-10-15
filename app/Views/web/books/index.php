@@ -20,10 +20,10 @@ require_once VIEWS . 'web/inc/header.php';
             <div class="col-lg-9 ftco-animate">
                 <div class="row">
 
-                    <?php foreach ($books as $book) : ?>
+                   <?php foreach ($books as $book) :?>
                     <div class="col-md-4 d-flex">
                         <div class="book-wrap">
-                            <div class="img d-flex justify-content-end w-100" style="background-image: url(<?php uploads('books/'.$book['img']) ?>);">
+                            <div class="img d-flex justify-content-end w-100" style="background-image: url(<?php uploads('books/'.$book['book_img']) ?>);">
                                 <div class="in-text">
                                     <a href="#" class="icon d-flex align-items-center justify-content-center" data-toggle="tooltip" data-placement="left" title="Add to cart">
                                         <span class="flaticon-shopping-cart"></span>
@@ -40,9 +40,9 @@ require_once VIEWS . 'web/inc/header.php';
                                 </div>
                             </div>
                             <div class="text px-4 py-3 w-100">
-                                <p class="mb-2"><span class="price">$<?php echo $book['price']; ?></span></p>
-                                <h2><a href="#"><?php echo substr($book['name'],0,14); ?></a></h2>
-                                <span class="position"><?php echo substr($book['desc'],0,14); ?></span>
+                                <p class="mb-2"><span class="price">$<?php echo $book['book_price']; ?></span></p>
+                                <h2><a href="#"><?php echo substr($book['book_name'],0,14); ?></a></h2>
+                                <span class="position">By : <?= $book['author_name']; ?></span>
                             </div>
                         </div>
                     </div>
@@ -95,7 +95,6 @@ require_once VIEWS . 'web/inc/header.php';
                     </ul>
                 </div>
             </div>
-
         </div>
     </div>
 </section>

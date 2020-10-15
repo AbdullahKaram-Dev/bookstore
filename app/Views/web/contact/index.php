@@ -65,29 +65,30 @@ require_once VIEWS . 'web/inc/header.php';
                         <div class="col-md-7">
                             <div class="contact-wrap w-100 p-md-5 p-4">
                                 <h3 class="mb-4">Contact Us</h3>
-                                <form method="POST" id="contactForm" name="contactForm" class="contactForm">
+                                <?php require VIEWS . "web/inc/errors.php"; ?>
+                                <form method="POST" action="<?php url('contact-us/send'); ?>" id="contactForm" name="contactForm" class="contactForm">
                                     <div class="row">
                                         <div class="col-md-6">
                                             <div class="form-group">
-                                                <label class="label" for="name">Full Name</label>
+                                                <label class="label" for="name">Full Name : <?= (! empty($errors["name"]) ? '<span style="color:red;"> '.$errors['name'].' </span>' : '') ?></label>
                                                 <input type="text" class="form-control" name="name" id="name" placeholder="Name">
                                             </div>
                                         </div>
                                         <div class="col-md-6">
                                             <div class="form-group">
-                                                <label class="label" for="email">Email Address</label>
+                                                <label class="label" for="email">Email Address : <?= (! empty($errors["email"]) ? '<span style="color:red;"> '.$errors['email'].' </span>' : '') ?></label>
                                                 <input type="email" class="form-control" name="email" id="email" placeholder="Email">
                                             </div>
                                         </div>
                                         <div class="col-md-12">
                                             <div class="form-group">
-                                                <label class="label" for="subject">Subject</label>
+                                                <label class="label" for="subject">Subject : <?= (! empty($errors["subject"]) ? '<span style="color:red;"> '.$errors['subject'].' </span>' : '') ?></label>
                                                 <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject">
                                             </div>
                                         </div>
                                         <div class="col-md-12">
                                             <div class="form-group">
-                                                <label class="label" for="#">Message</label>
+                                                <label class="label" for="message">Message : <?= (! empty($errors["message"]) ? '<span style="color:red;"> '.$errors['message'].' </span>' : '') ?></label>
                                                 <textarea name="message" class="form-control" id="message" cols="30" rows="4" placeholder="Message"></textarea>
                                             </div>
                                         </div>
@@ -102,7 +103,9 @@ require_once VIEWS . 'web/inc/header.php';
                             </div>
                         </div>
                         <div class="col-md-5 order-md-first d-flex align-items-stretch">
-                            <div id="map" class="map"></div>
+                            <div>
+                                <?= $settings['map']; ?>
+                            </div>
                         </div>
                     </div>
                 </div>

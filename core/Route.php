@@ -6,7 +6,7 @@ class Route
 {
     private $routing_table = [];
 
-    public function get(string $url, string $controller_action)
+    public function get(string $url, string $controller_action,string $middleware = null)
     {
         $controller_action_arr = explode("@", $controller_action);
         $url_regex = "/^" . str_replace("/", "\/", $url) . "$/";
@@ -15,10 +15,11 @@ class Route
             'method' => 'GET',
             'controller' => $controller_action_arr[0],
             'action' => $controller_action_arr[1],
+            'middleware' => $middleware,
         ];
     }
 
-    public function post(string $url, string $controller_action)
+    public function post(string $url, string $controller_action,string $middleware = null)
     {
         $controller_action_arr = explode("@", $controller_action);
         $url_regex = "/^" . str_replace("/", "\/", $url) . "$/";
@@ -27,6 +28,7 @@ class Route
             'method' => 'POST',
             'controller' => $controller_action_arr[0],
             'action' => $controller_action_arr[1],
+            'middleware' => $middleware,
         ];
     }
 
