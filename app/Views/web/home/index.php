@@ -9,7 +9,7 @@ require_once VIEWS . 'web/inc/header.php';
                 <div class="text w-100">
                     <h1 class="mb-4">Good books don't give up all their secrets at once</h1>
                     <p class="mb-4">A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
-                    <p><a href="#" class="btn btn-primary py-3 px-4">View All Books</a></p>
+                    <p><a href="<?php url("books/page/1") ?>" class="btn btn-primary py-3 px-4">View All Books</a></p>
                 </div>
             </div>
         </div>
@@ -70,26 +70,20 @@ require_once VIEWS . 'web/inc/header.php';
             <div class="col-md-6 col-lg-4 d-flex">
                 <div class="book-wrap d-lg-flex">
 
-                    <div class="img d-flex justify-content-end" style="background-image: url(<?php uploads("books/".$book['img'] ); ?>);">
+                    <div class="img d-flex justify-content-end" style="background-image: url(<?php uploads("books/".$book['book_img'] ); ?>);">
                         <div class="in-text">
                             <a href="#" class="icon d-flex align-items-center justify-content-center" data-toggle="tooltip" data-placement="left" title="Add to cart">
                                 <span class="flaticon-shopping-cart"></span>
                             </a>
-                            <a href="#" class="icon d-flex align-items-center justify-content-center" data-toggle="tooltip" data-placement="left" title="Add to Wishlist">
-                                <span class="flaticon-heart-1"></span>
-                            </a>
-                            <a href="#" class="icon d-flex align-items-center justify-content-center" data-toggle="tooltip" data-placement="left" title="Quick View">
+                            <a href="<?php url('books/show/'.$book['book_id']); ?>" class="icon d-flex align-items-center justify-content-center" data-toggle="tooltip" data-placement="left" title="Quick View">
                                 <span class="flaticon-search"></span>
-                            </a>
-                            <a href="#" class="icon d-flex align-items-center justify-content-center" data-toggle="tooltip" data-placement="left" title="Compare">
-                                <span class="flaticon-visibility"></span>
                             </a>
                         </div>
                     </div>
                     <div class="text p-4">
-                        <p class="mb-2"><span class="price">$<?php echo $book['price']; ?></span></p>
-                        <h2><a href="#"></a><?php echo substr($book['name'],0,14); ?></h2>
-                        <span class="position">By John Nathan Muller</span>
+                        <p class="mb-2"><span class="price">$<?php echo $book['book_price']; ?></span></p>
+                        <h2><?php echo substr($book['book_name'],0,14); ?></h2>
+                        <span class="position">By : <?= strtok($book['author_name']," "); ?></span>
                     </div>
                 </div>
             </div>

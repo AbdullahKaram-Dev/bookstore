@@ -11,3 +11,4 @@ define("ASSETS", ROOT . "public/assets/");
 define("UPLOADS", ROOT . "public/uploads/");
 define("ROUTES", ROOT . "routes/");
 define("VENDOR", ROOT . "vendor/");
+define("PAGE_LENGTH",3);

@@ -7,6 +7,8 @@ namespace Composer\Autoload;
 class ComposerStaticInitf2f57ae41efd5e7d5d22bf0fad3009a7
 {
     public static $files = array (
+        '0e6d7bf4a5811bfa5cf40c5ccd6fae6a' => __DIR__ . '/..' . '/symfony/polyfill-mbstring/bootstrap.php',
+        'a4a119a56e50fbb293281d9a48007e0e' => __DIR__ . '/..' . '/symfony/polyfill-php80/bootstrap.php',
         'e3d29885526bf36254b275f1e8720d97' => __DIR__ . '/../..' . '/env.php',
         '5ec26a44593cffc3089bdca7ce7a56c3' => __DIR__ . '/../..' . '/core/helpers.php',
         '49382141d4067a766a7a28a376aa9db6' => __DIR__ . '/../..' . '/config/dirs.php',
@@ -15,9 +17,17 @@ class ComposerStaticInitf2f57ae41efd5e7d5d22bf0fad3009a7
     );
 
     public static $prefixLengthsPsr4 = array (
+        'S' => 
+        array (
+            'Symfony\\Polyfill\\Php80\\' => 23,
+            'Symfony\\Polyfill\\Mbstring\\' => 26,
+            'Symfony\\Contracts\\Translation\\' => 30,
+            'Symfony\\Component\\Translation\\' => 30,
+        ),
         'C' => 
         array (
             'Core\\' => 5,
+            'Carbon\\' => 7,
         ),
         'A' => 
         array (
@@ -26,9 +36,29 @@ class ComposerStaticInitf2f57ae41efd5e7d5d22bf0fad3009a7
     );
 
     public static $prefixDirsPsr4 = array (
+        'Symfony\\Polyfill\\Php80\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/symfony/polyfill-php80',
+        ),
+        'Symfony\\Polyfill\\Mbstring\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/symfony/polyfill-mbstring',
+        ),
+        'Symfony\\Contracts\\Translation\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/symfony/translation-contracts',
+        ),
+        'Symfony\\Component\\Translation\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/symfony/translation',
+        ),
         'Core\\' => 
         array (
             0 => __DIR__ . '/../..' . '/core',
+        ),
+        'Carbon\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/nesbot/carbon/src/Carbon',
         ),
         'App\\' => 
         array (
@@ -37,20 +67,9 @@ class ComposerStaticInitf2f57ae41efd5e7d5d22bf0fad3009a7
     );
 
     public static $classMap = array (
-        'Core\\App' => __DIR__ . '/../..' . '/core/App.php',
-        'Core\\Db' => __DIR__ . '/../..' . '/core/Db.php',
-        'Core\\File' => __DIR__ . '/../..' . '/core/File.php',
-        'Core\\Request' => __DIR__ . '/../..' . '/core/Request.php',
-        'Core\\Route' => __DIR__ . '/../..' . '/core/Route.php',
-        'Core\\Session' => __DIR__ . '/../..' . '/core/Session.php',
-        'Core\\Validation\\Rules\\Email' => __DIR__ . '/../..' . '/core/Validation/Rules/Email.php',
-        'Core\\Validation\\Rules\\Numeric' => __DIR__ . '/../..' . '/core/Validation/Rules/Numeric.php',
-        'Core\\Validation\\Rules\\Required' => __DIR__ . '/../..' . '/core/Validation/Rules/Required.php',
-        'Core\\Validation\\Rules\\Str' => __DIR__ . '/../..' . '/core/Validation/Rules/Str.php',
-        'Core\\Validation\\Rules\\ValidationRule' => __DIR__ . '/../..' . '/core/Validation/Rules/ValidationRule.php',
-        'Core\\Validation\\ValidationStrategy' => __DIR__ . '/../..' . '/core/Validation/ValidationStrategy.php',
-        'Core\\Validation\\Validator' => __DIR__ . '/../..' . '/core/Validation/Validator.php',
-        'Core\\View' => __DIR__ . '/../..' . '/core/View.php',
+        'Stringable' => __DIR__ . '/..' . '/symfony/polyfill-php80/Resources/stubs/Stringable.php',
+        'UnhandledMatchError' => __DIR__ . '/..' . '/symfony/polyfill-php80/Resources/stubs/UnhandledMatchError.php',
+        'ValueError' => __DIR__ . '/..' . '/symfony/polyfill-php80/Resources/stubs/ValueError.php',
     );
 
     public static function getInitializer(ClassLoader $loader)

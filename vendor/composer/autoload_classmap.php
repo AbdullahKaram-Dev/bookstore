@@ -6,18 +6,7 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
-    'Core\\App' => $baseDir . '/core/App.php',
-    'Core\\Db' => $baseDir . '/core/Db.php',
-    'Core\\File' => $baseDir . '/core/File.php',
-    'Core\\Request' => $baseDir . '/core/Request.php',
-    'Core\\Route' => $baseDir . '/core/Route.php',
-    'Core\\Session' => $baseDir . '/core/Session.php',
-    'Core\\Validation\\Rules\\Email' => $baseDir . '/core/Validation/Rules/Email.php',
-    'Core\\Validation\\Rules\\Numeric' => $baseDir . '/core/Validation/Rules/Numeric.php',
-    'Core\\Validation\\Rules\\Required' => $baseDir . '/core/Validation/Rules/Required.php',
-    'Core\\Validation\\Rules\\Str' => $baseDir . '/core/Validation/Rules/Str.php',
-    'Core\\Validation\\Rules\\ValidationRule' => $baseDir . '/core/Validation/Rules/ValidationRule.php',
-    'Core\\Validation\\ValidationStrategy' => $baseDir . '/core/Validation/ValidationStrategy.php',
-    'Core\\Validation\\Validator' => $baseDir . '/core/Validation/Validator.php',
-    'Core\\View' => $baseDir . '/core/View.php',
+    'Stringable' => $vendorDir . '/symfony/polyfill-php80/Resources/stubs/Stringable.php',
+    'UnhandledMatchError' => $vendorDir . '/symfony/polyfill-php80/Resources/stubs/UnhandledMatchError.php',
+    'ValueError' => $vendorDir . '/symfony/polyfill-php80/Resources/stubs/ValueError.php',
 );

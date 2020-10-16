@@ -26,13 +26,13 @@
         <div class="col-md-8 order-md-last">
             <div class="row">
                 <div class="col-md-6 text-center">
-                    <a class="navbar-brand" href="index.html">Publishing <span>Company</span> <small>Book Publishing Company</small></a>
+                    <a class="navbar-brand" href="<?php url("") ?>">Publishing <span>Company</span> <small>Book Publishing Company</small></a>
                 </div>
                 <div class="col-md-6 d-md-flex justify-content-end mb-md-0 mb-3">
                     <form action="#" class="searchform order-lg-last">
                         <div class="form-group d-flex">
                             <input type="text" class="form-control pl-3" placeholder="Search">
-                            <button type="submit" placeholder="" class="form-control search"><span class="fa fa-search"></span></button>
+                            <button type="submit" class="form-control search"><span class="fa fa-search"></span></button>
                         </div>
                     </form>
                 </div>
@@ -58,8 +58,8 @@
         <div class="collapse navbar-collapse" id="ftco-nav">
             <ul class="navbar-nav m-auto">
                 <li class="nav-item active"><a href="<?php url(''); ?>" class="nav-link">Home</a></li>
-                <li class="nav-item"><a href="<?php url('books'); ?>" class="nav-link">Books</a></li>
-                <li class="nav-item"><a href="authors.html" class="nav-link">Author</a></li>
+                <li class="nav-item"><a href="<?php url('books/page/1'); ?>" class="nav-link">Books</a></li>
+                <li class="nav-item"><a href="<?php url('authors'); ?>" class="nav-link">Author</a></li>
                 <li class="nav-item"><a href="<?php url('contact-us'); ?>" class="nav-link">Contact</a></li>
                 <?php if(auth()):?>
                 <li class="nav-item"><a href="<?php url('logout'); ?>" class="nav-link">Logout</a></li>

@@ -12,5 +12,8 @@
       "config/urls.php",
       "config/seo.php"
     ]
+  },
+  "require": {
+    "nesbot/carbon": "^2.41"
   }
 }

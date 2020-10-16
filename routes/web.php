@@ -3,16 +3,21 @@
 use Core\Route;
 
 $route = new Route;
-$num = "([\d]+)";
+$id = "([\d]+)";
 $str = "([\w-]+)";
 
 /* Main Root For Site */
-
 $route->get('','HomeController@index');
-$route->get('books','BookController@index');
+
+$route->get("books/page/$id",'BookController@index');
+$route->get("books/show/$id","BookController@show");
+
+$route->get("books/category/$id","CategoryController@showBooksCategory");
+
 $route->get('contact-us','ContactController@index');
 $route->post('contact-us/send', 'ContactController@send');
 
+$route->get('authors','AuthorController@index');
 
 /* Route Login And Register For Users */
 

@@ -17,11 +17,14 @@ class HomeController
                 ->get();
 
         $data['new_books'] = Book::connectTable()
-            ->select("id,img,name,price")
-            ->orderBy("created_at","desc")
-            ->limit(6)
-            ->get();
 
+            ->joinTables(['books','authors'])
+            ->selectMultiple([
+                'books'=>['id','name','img','price'],
+                'authors'=>['name'],])
+            ->on([
+                ['books.author_id','authors.id']])
+            ->limit(6)->get();
 
         View::load("web/home/index",$data);
     }

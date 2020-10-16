@@ -49,7 +49,14 @@ if (! function_exists("auth")){
 
 
 
+if (! function_exists("TimeHumans")){
 
+    function TimeHumans($time)
+    {
+        $carbon = new \Carbon\Carbon;
+        return $carbon->parse($time)->diffForHumans();
+    }
+}
 
 
 
