@@ -4,6 +4,7 @@ namespace App\Controllers;
 
 use App\Models\Cat;
 use App\Models\Book;
+use App\Models\Setting;
 use Core\View;
 
 class HomeController
@@ -25,6 +26,9 @@ class HomeController
             ->on([
                 ['books.author_id','authors.id']])
             ->limit(6)->get();
+        $data['setting'] = Setting::connectTable()
+                ->select()
+                ->getOne();
 
         View::load("web/home/index",$data);
     }

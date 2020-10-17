@@ -80,7 +80,7 @@ require_once VIEWS . 'web/inc/header.php';
                     <h3>Top Authors</h3>
                     <ul class="top">
                         <?php foreach ($authors as $author) : ?>
-                        <li><a href="#"><?php echo $author['name']; ?></a></li>
+                        <li><a href="<?php url('authors/show/'.$author['id']); ?>"><?php echo $author['name']; ?></a></li>
                         <?php endforeach; ?>
                     </ul>
                 </div>

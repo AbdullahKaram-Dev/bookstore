@@ -30,7 +30,7 @@ require_once VIEWS . 'web/inc/header.php';
                         <div class="faded">
                             <p><?= $author['brief']; ?></p>
                             <p>Member Since : <?= TimeHumans($author['created_at']); ?></p>
-                            <a href="#" class="btn btn-primary">View All Books And Author</a>
+                            <a href="<?php url('authors/show/'.$author['id']); ?>" class="btn btn-primary">View All Books And Author</a>
                             <ul class="ftco-social text-center">
                                 <li class="ftco-animate"><a target="_blank" href="<?= $author['twitter']; ?>" class="d-flex align-items-center justify-content-center"><span class="fa fa-twitter"></span></a></li>
                                 <li class="ftco-animate"><a target="_blank" href="<?= $author['facebook']; ?>" class="d-flex align-items-center justify-content-center"><span class="fa fa-facebook"></span></a></li>
@@ -59,7 +59,7 @@ require_once VIEWS . 'web/inc/header.php';
             <?php if ($author['is_top'] == 0) : ?>
             <div class="col-md-2 ftco-animate">
                 <ul class="top">
-                    <li><a href=""><?= $author['name']; ?></a></li>
+                    <li><a href="<?php url('authors/show/'.$author['id']); ?>"><?= $author['name']; ?></a></li>
                 </ul>
             </div>
             <?php endif; ?>
