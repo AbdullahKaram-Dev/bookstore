@@ -45,8 +45,8 @@ class Request
                      </tr>
                      
                      <tr>
-                        <td style='background-color: red'>$key</td>
-                        <td style='background-color: white'>$value</td>
+                        <td style='background-color: blue;max-width: 50%'>$key</td>
+                        <td style='background-color: white;max-width: 50%'>".substr($value,0,150)."</td>
                      </tr>
                   </table>
                   
@@ -61,5 +61,8 @@ class Request
         header("location:" . URL . $path);
     }
 
-
+    public function back()
+    {
+        header("location:" . $this->server('HTTP_REFERER'));
+    }
 }

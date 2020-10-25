@@ -25,7 +25,7 @@ require_once VIEWS . 'web/inc/header.php';
                         <div class="book-wrap">
                             <div class="img d-flex justify-content-end w-100" style="background-image: url(<?php uploads('books/'.$book['book_img']) ?>);">
                                 <div class="in-text">
-                                    <a href="#" class="icon d-flex align-items-center justify-content-center" data-toggle="tooltip" data-placement="left" title="Add to cart">
+                                    <a href="<?php url('cart/add/'.$book['book_id']); ?>" class="icon d-flex align-items-center justify-content-center" data-toggle="tooltip" data-placement="left" title="Add to cart">
                                         <span class="flaticon-shopping-cart"></span>
                                     </a>
                                     <a href="<?php url("books/show/". $book['book_id']); ?>" class="icon d-flex align-items-center justify-content-center" data-toggle="tooltip" data-placement="left" title="Quick View">
@@ -46,11 +46,7 @@ require_once VIEWS . 'web/inc/header.php';
                 <div class="row mt-5">
                     <div class="col">
                         <div class="block-27">
-                            <ul>
-                                <li><a href="<?php url("books/page/". ($page-1)); ?>" <?php if($page == 1) echo 'class="link-disabled"'; ?> >&lt;</a></li>
-                                page <?= $page ?> of <?= $pages_total_num; ?>
-                                <li><a href="<?php url("books/page/". ($page+1)); ?>" <?php if($page == $pages_total_num) echo 'class="link-disabled"'; ?>>&gt;</a></li>
-                            </ul>
+                           <?php include (VIEWS . 'web/inc/pagination.php'); ?>
                         </div>
                     </div>
                 </div>

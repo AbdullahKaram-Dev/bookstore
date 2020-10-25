@@ -19,7 +19,7 @@ class File
         $this->imageTmp   = $file['tmp_name'];
         $this->imageError = $file['error'];
         $this->imageSize  = $file['size'];
-        $this->imageType  = $file['type'];
+        $this->imageType  = strtok($file['type'],'/');
     }
 
 

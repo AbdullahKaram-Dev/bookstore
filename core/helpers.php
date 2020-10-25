@@ -9,6 +9,14 @@ if (! function_exists("assets"))
 }
 
 
+if (! function_exists("assetsAdmin"))
+{
+    function assetsAdmin($path)
+    {
+        echo URL . "assets/admin/$path";
+    }
+}
+
 if (! function_exists("uploads"))
 {
     function uploads($path)
@@ -22,6 +30,14 @@ if (! function_exists("url")){
     function url($path)
     {
         echo URL .$path;
+    }
+}
+
+if (! function_exists("aurl")){
+
+    function aurl($path)
+    {
+        echo AURL .$path;
     }
 }
 
@@ -58,6 +74,20 @@ if (! function_exists("TimeHumans")){
     }
 }
 
+if (! function_exists("length")){
+
+    function length($value,$min,$max)
+    {
+        if ($value >= $min && $value <= $max){
+
+            return true;
+        }else{
+
+            return null;
+        }
+
+    }
+}
 
 
 

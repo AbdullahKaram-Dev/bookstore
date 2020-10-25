@@ -69,7 +69,7 @@ class AuthController
 
     public function login()
     {
-        View::load('web/auth/login');
+       View::load('web/auth/login');
     }
 
     public function doLogin()

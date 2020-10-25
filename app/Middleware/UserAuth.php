@@ -1,9 +1,7 @@
 <?php
 
 namespace App\Middleware;
-
 use Core\Auth;
-
 
 class UserAuth
 {

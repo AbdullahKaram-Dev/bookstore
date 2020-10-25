@@ -1,3 +1,8 @@
+<?php
+$setting = App\Models\Setting::connectTable()
+    ->select()
+    ->getOne();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -59,6 +64,7 @@
             <ul class="navbar-nav m-auto">
                 <li class="nav-item active"><a href="<?php url(''); ?>" class="nav-link">Home</a></li>
                 <li class="nav-item"><a href="<?php url('books/page/1'); ?>" class="nav-link">Books</a></li>
+                <li class="nav-item"><a href="<?php url('cart'); ?>" class="nav-link">Cart</a></li>
                 <li class="nav-item"><a href="<?php url('authors'); ?>" class="nav-link">Author</a></li>
                 <li class="nav-item"><a href="<?php url('contact-us'); ?>" class="nav-link">Contact</a></li>
                 <?php if(auth()):?>

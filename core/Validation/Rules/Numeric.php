@@ -16,6 +16,8 @@ class Numeric implements ValidationRule
     {
         if (! is_numeric($this->value)){
             return "$this->name must be numeric";
+        } elseif (! length($this->value,10,1000)){
+            return "$this->name must be valid number";
         }
 
         return "";

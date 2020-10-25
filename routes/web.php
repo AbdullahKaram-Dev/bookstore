@@ -22,6 +22,14 @@ $route->get("books/show/$id","BookController@show");
 
 $route->get("books/category/$id","CategoryController@showBooksCategory");
 
+
+/* Route cart */
+
+$route->get("cart/add/$id",'CartController@add');
+$route->get("cart",'CartController@index','UserAuth');
+$route->post('cart/store','CartController@store','UserAuth');
+$route->get('cart/empty','CartController@emptyCart','UserAuth');
+$route->get("cart/remove-book/$id",'CartController@removeBook','UserAuth');
 /* Route contact */
 
 $route->get('contact-us','ContactController@index');
@@ -39,3 +47,13 @@ $route->post('do-register','AuthController@doRegister');
 $route->get('login','AuthController@login');
 $route->post('do-login','AuthController@doLogin');
 $route->get('logout','AuthController@logout','UserAuth');
+
+
+
+
+/* start admin route */
+
+$route->get('dashboard','AdminHomeController@index',"AdminAuth");
+$route->get('dashboard/books','AdminBookController@index',"AdminAuth");
+$route->get('dashboard/books/create','AdminBookController@create',"AdminAuth");
+$route->post('dashboard/books/store','AdminBookController@store',"AdminAuth");

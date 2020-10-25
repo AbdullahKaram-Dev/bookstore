@@ -46,7 +46,7 @@ class BookController
                 'authors'=>['id','name'],
             ])->on([
                 ['books.author_id' , 'authors.id'],
-            ])->paginate(PAGE_LENGTH, $offset);
+            ])->orderBy('book_id','ASC')->paginate(PAGE_LENGTH, $offset);
 
         View::load("web/books/index",$data);
     }
