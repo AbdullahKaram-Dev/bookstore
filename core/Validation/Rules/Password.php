@@ -1,22 +1,17 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: body
- * Date: 15/10/2020
- * Time: 12:32 م
- */
 
 namespace Core\Validation\Rules;
 
-
 class Password implements ValidationRule
 {
-    private $name,$value;
+    private $name , $value,$param;
 
-    public function __construct(string $name, $value)
+    public function __construct($name, $value,$param = null)
     {
-        $this->name = $name;
+        $this->name  = $name;
         $this->value = $value;
+        $this->param = $param;
+
     }
 
     public function validate()

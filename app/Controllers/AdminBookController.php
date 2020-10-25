@@ -51,7 +51,7 @@ class AdminBookController
             [
                 'name' => 'img',
                 'value' => $file->imageSize,
-                'rules' => 'size'
+                'rules' => 'min:500'
             ],
             [
                 'name' => 'img',
@@ -66,7 +66,7 @@ class AdminBookController
             [
                 'name' => 'price',
                 'value' => $price,
-                'rules' => 'required|numeric'
+                'rules' => 'min:2'
             ],
             [
                 'name' => 'desc',
