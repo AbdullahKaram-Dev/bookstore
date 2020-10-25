@@ -11,7 +11,7 @@
                     <div class="card-header"><h3>Create New Book</h3></div>
                     <div class="card-body">
                         <?php require VIEWS . 'admin/inc/errors.php'; ?>
-                        <?php require VIEWS . 'admin/inc/success.php'; ?>
+                        <?php require VIEWS . 'admin/inc/message.php'; ?>
                         <form class="forms-sample" action="<?php url('dashboard/books/store'); ?>" method="post" enctype="multipart/form-data">
                             <div class="form-group row">
                                 <label for="Book-Name" class="col-sm-3 col-form-label">Book-Name : <?= (! empty($errors["name"]) ? '<span style="color:red;"> '.$errors['name'].' </span>' : '') ?></label>

@@ -102,10 +102,41 @@ class AdminBookController
                 'cat_id'=> $cat_id,
             ])->save();
             $session = new Session;
-            $session->set("success","The process of adding a new book was successful");
+            $session->set("success-message","The process of adding a new book was successfully");
         }
 
         $request->redirect("dashboard/books/create");
+    }
+
+    public function delete($id)
+    {
+       $deleted = Book::connectTable()
+            ->delete()->where('id','=',$id)->saveAndGetStatus();
+       if ($deleted){
+           $session = new Session;
+           $session->set('success-message','Book deleted successfully');
+       }else{
+           $session = new Session;
+           $session->set('error-message','We are sorry can\'t delete this book or it\'s not found');
+       }
+
+       $request = new Request;
+       $request->redirect('dashboard/books');
+    }
+
+    public function show($id)
+    {
+        $data['books'] = Db::getInstance()->joinTables(['books','authors','cats'])
+            ->selectMultiple([
+                'books'=>['id','name','img','price','desc'],
+                'authors'=>['name'],
+                'cats'=>['name'],
+            ])->on([
+                ['books.id' , "$id"],
+                ['books.author_id' , 'authors.id'],
+                ['books.cat_id' , 'cats.id'],
+            ])->get();
+        View::load('admin/book/single-book',$data);
     }
 
 }

@@ -12,7 +12,7 @@
 </div>
 <div class="card-body">
     <div id="data_table_wrapper" class="dataTables_wrapper dt-bootstrap4 no-footer">
-
+      <?php require_once VIEWS . 'admin/inc/message.php'; ?>
         <div class="row">
             <div class="col-sm-12">
                 <table id="data_table" class="table dataTable no-footer" role="grid" aria-describedby="data_table_info">
@@ -37,9 +37,9 @@
                         <td><?= $book['author_name']; ?></td>
                         <td><?= $book['cat_name']; ?></td>
                         <td>
-                        <a href="#"><i class="ik ik-eye"></i></a>
+                        <a href="<?php url('dashboard/books/show/'.$book['book_id']); ?>"><i class="ik ik-eye"></i></a>
                         <a href="#"><i class="ik ik-edit-2"></i></a>
-                        <a href="#"><i class="ik ik-trash-2"></i></a>
+                        <a href="<?php url('dashboard/books/delete/'.$book['book_id']); ?>"><i class="ik ik-trash-2"></i></a>
                         </td>
                     </tr>
                     <?php endforeach; ?>

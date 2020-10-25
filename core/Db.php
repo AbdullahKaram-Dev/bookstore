@@ -45,7 +45,7 @@ class Db
         return $this;
     }
 
-    public function where(string $field, string $op, $value)
+    public function where(string $field, string $op,$value)
     {
         $this->query .= " WHERE $field $op '$value'";
         return $this;
@@ -105,8 +105,6 @@ class Db
         }
     }
 
-    // TODOS (insert, update, delete) --> done
-    // real escape string and `` added
 
     public function insert(array $data)
     {
@@ -150,6 +148,12 @@ class Db
     public function save()
     {
         return $this->conn->query($this->query);
+    }
+
+    public function saveAndGetStatus()
+    {
+        $this->conn->query($this->query);
+        return $this->conn->affected_rows;
     }
 
     public function saveAndGetId()

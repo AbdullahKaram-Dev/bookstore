@@ -57,3 +57,5 @@ $route->get('dashboard','AdminHomeController@index',"AdminAuth");
 $route->get('dashboard/books','AdminBookController@index',"AdminAuth");
 $route->get('dashboard/books/create','AdminBookController@create',"AdminAuth");
 $route->post('dashboard/books/store','AdminBookController@store',"AdminAuth");
+$route->get("dashboard/books/delete/$id",'AdminBookController@delete',"AdminAuth");
+$route->get("dashboard/books/show/$id",'AdminBookController@show',"AdminAuth");
