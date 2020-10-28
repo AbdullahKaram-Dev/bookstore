@@ -4,6 +4,7 @@
 <div class="main-content">
     <div class="container-fluid">
         <div class="row clearfix">
+
             <!-- start content dashboard -->
             <?php foreach ($books as $book) : ?>
                 <div class="sl-item">
@@ -15,6 +16,7 @@
                                          class="img-fluid rounded">
                                 </div>
                                 <div class="col-md-9 col-xs-12">
+                                    <?php require VIEWS . 'admin/inc/message.php'; ?>
                                     <h1 class="badge badge-light-blue">Book-Descraption </h1>
                                     <p style="border: ridge 1px darkblue; padding: 10px;" ><?php echo $book['book_desc']; ?></p>
                                     <h5 class="badge badge-primary">Book-Name : <?php echo $book['book_name']; ?></h5>

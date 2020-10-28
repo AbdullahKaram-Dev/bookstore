@@ -32,14 +32,8 @@
                 <div class="nav-item has-sub">
                     <a href="javascript:void(0)"><i class="ik ik-list"></i><span>Menu Categories</span></a>
                     <div class="submenu-content">
-                        <a href="javascript:void(0)" class="menu-item">Menu Level 2.1</a>
-                        <div class="nav-item has-sub">
-                            <a href="javascript:void(0)" class="menu-item">Menu Level 2.2</a>
-                            <div class="submenu-content">
-                                <a href="javascript:void(0)" class="menu-item">Menu Level 3.1</a>
-                            </div>
-                        </div>
-                        <a href="javascript:void(0)" class="menu-item">Menu Level 2.3</a>
+                        <a href="<?php url('dashboard/categories'); ?>" class="menu-item">All Categories</a>
+                        <a href="javascript:void(0)" class="menu-item">Create New Category</a>
                     </div>
                 </div>
                 <!-- end section nav -->

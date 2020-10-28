@@ -38,7 +38,7 @@
                         <td><?= $book['cat_name']; ?></td>
                         <td>
                         <a href="<?php url('dashboard/books/show/'.$book['book_id']); ?>"><i class="ik ik-eye"></i></a>
-                        <a href="#"><i class="ik ik-edit-2"></i></a>
+                        <a href="<?php url('dashboard/books/edit/'.$book['book_id']);  ?>"><i class="ik ik-edit-2"></i></a>
                         <a href="<?php url('dashboard/books/delete/'.$book['book_id']); ?>"><i class="ik ik-trash-2"></i></a>
                         </td>
                     </tr>

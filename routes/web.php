@@ -53,9 +53,27 @@ $route->get('logout','AuthController@logout','UserAuth');
 
 /* start admin route */
 
+/* start route admin-book  */
+
 $route->get('dashboard','AdminHomeController@index',"AdminAuth");
 $route->get('dashboard/books','AdminBookController@index',"AdminAuth");
 $route->get('dashboard/books/create','AdminBookController@create',"AdminAuth");
 $route->post('dashboard/books/store','AdminBookController@store',"AdminAuth");
 $route->get("dashboard/books/delete/$id",'AdminBookController@delete',"AdminAuth");
 $route->get("dashboard/books/show/$id",'AdminBookController@show',"AdminAuth");
+$route->get("dashboard/books/edit/$id",'AdminBookController@edit',"AdminAuth");
+$route->post("dashboard/books/update/$id",'AdminBookController@update',"AdminAuth");
+
+/* end route book */
+
+
+/* start route admin-category */
+
+$route->get('dashboard/categories',"AdminCategoryController@index","AdminAuth");
+$route->get("dashboard/category/change-status/$id/$str","AdminCategoryController@changeStatusCategory","AdminAuth");
+$route->get("dashboard/category/show/$id","AdminCategoryController@show","AdminAuth");
+$route->get("dashboard/category/edit/$id",'AdminCategoryController@edit',"AdminAuth");
+$route->post("dashboard/category/update/$id",'AdminCategoryController@update',"AdminAuth");
+
+
+/* end route admin-category */
