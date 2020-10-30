@@ -44,7 +44,9 @@ class CartController
         $session = new Session;
         $request = new Request;
         extract($_POST);
+        $cart = $_SESSION['cart'];
         $user_id = $session->get('logged_user')['id'];
+
 
         if (!empty($cart)) {
 

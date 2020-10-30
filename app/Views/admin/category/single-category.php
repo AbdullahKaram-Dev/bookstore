@@ -6,6 +6,7 @@
         <div class="row clearfix">
             <!-- start content dashboard -->
 
+<?php require_once VIEWS . 'admin/inc/message.php'; ?>
 
             <?php foreach ($categories as $category) : ?>
 

@@ -21,14 +21,18 @@
                                             <input type="hidden" name="ids[]" value="<?= $book['id']; ?>">
                                         </div>
                                         <div class="col-md-2">
-                                            <strong id="price" style="color: red">$<?= $book['price']; ?></strong>
+                                            <strong class="price<?= $book['id']; ?>" style="color: red">$<?= $book['price']; ?></strong>
                                         </div>
                                         <div class="col-md-3">
                                             <img class="form-control" style="max-width: 35%;max-height: 100%" src="<?php uploads('books/'.$book['img']); ?>">
                                         </div>
                                         <div class="col-md-2">
-                                            <div class="form-group">
-                                                <input type="number" name="quantities[]" id="count" class="form-control" min="1" value="1" >
+                                            <div class="d-flex form-group">
+                                                <input type="hidden" name="quantities[]" class="form-control qun<?= $book['id']; ?>" id="<?= $book['id']; ?>" value="1">
+
+                                                <button type="button" class="form-control minus-count" price="<?= $book['price']; ?>" id="<?= $book['id']; ?>" >-</button>
+                                                <span class="num<?= $book['id']; ?>">1</span>
+                                                <button type="button" class="form-control plus-count" price="<?= $book['price']; ?>" id="<?= $book['id']; ?>" >+</button>
                                             </div>
                                         </div>
                                         <div class="col-md-2">
@@ -55,32 +59,42 @@
 </section>
 <?php require_once VIEWS . 'web/inc/footer.php'; ?>
 <script>
+$(document).ready(function ()
+{
+    $(".plus-count").click(function () {
 
-    /*  function Add() {
-
-          /!*  هجيب الكونت واضربو فى البرايز واظهرو مكان البرايز كل دا على ايفنت واحد اللى هوا تزويد الكمية نفسها *!/
-          var $count = document.getElementById("count").value;
-          var $price = document.getElementById("price").valueOf();
-
-              alert($price);
-      }*/
-
-    $(document).ready(function ()
-    {
-        $("input").click(function () {
-
-            var price = $("#price").text();
-            var newPrice = price.slice(1);
-            var count = document.getElementById("count").value;
-
-
-            var data = '$'+ (newPrice * count);
-            $("#price").text(data);
-
-
-        });
+        var id = $(this).attr('id');
+        var oldNum = $('.num'+id).text();
+        var num = parseInt(oldNum) + 1;
+        var price = $(this).attr('price');
+        var total = num * price;
+        $('.num'+id).text(num);
+        $('.price'+id).text('$'+total);
+        $('.qun'+id).val((num));
 
 
     });
 
+    $(".minus-count").click(function () {
+
+        var id = $(this).attr('id');
+        var oldNum = $('.num'+id).text();
+
+        if (oldNum == 1){
+
+            $('.num'+id).text(oldNum);
+
+        } else {
+            var num = parseInt(oldNum) - 1;
+            var price = $(this).attr('price');
+            var total = num * price;
+            $('.num'+id).text(num);
+            $('.price'+id).text('$'+total);
+            $('.qun'+id).val((num));
+
+        }
+
+    });
+
+});
 </script>

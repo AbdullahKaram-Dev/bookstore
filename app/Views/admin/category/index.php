@@ -53,7 +53,7 @@
                                                             class="ik ik-eye"></i></a>
                                                 <a href="<?php url('dashboard/category/edit/'.$category['id']); ?>"><i
                                                             class="ik ik-edit-2"></i></a>
-                                                <a href=""><i
+                                                <a href="<?php url("dashboard/category/delete/".$category['id']); ?>"><i
                                                             class="ik ik-trash-2"></i></a>
                                             </td>
                                         </tr>

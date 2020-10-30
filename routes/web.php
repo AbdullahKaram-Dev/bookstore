@@ -7,7 +7,7 @@ $route = new Route;
 /* Pattern For String And numbers */
 
 $id = "([\d]+)";
-$str = "([\w-]+)";
+$tags = "([\w-]+)";
 
 /* Main Root For Site */
 
@@ -70,10 +70,18 @@ $route->post("dashboard/books/update/$id",'AdminBookController@update',"AdminAut
 /* start route admin-category */
 
 $route->get('dashboard/categories',"AdminCategoryController@index","AdminAuth");
-$route->get("dashboard/category/change-status/$id/$str","AdminCategoryController@changeStatusCategory","AdminAuth");
+$route->get("dashboard/category/change-status/$id/$tags","AdminCategoryController@changeStatusCategory","AdminAuth");
 $route->get("dashboard/category/show/$id","AdminCategoryController@show","AdminAuth");
 $route->get("dashboard/category/edit/$id",'AdminCategoryController@edit',"AdminAuth");
 $route->post("dashboard/category/update/$id",'AdminCategoryController@update',"AdminAuth");
-
+$route->get("dashboard/category/delete/$id","AdminCategoryController@delete","AdminAuth");
+$route->get("dashboard/category/create","AdminCategoryController@create","AdminAuth");
+$route->post("dashboard/category/store","AdminCategoryController@store","AdminAuth");
 
 /* end route admin-category */
+
+/* start route authors */
+
+$route->get('dashboard/authors',"AdminAuthorController@index","AuthAdmin");
+
+/* end route authors */
